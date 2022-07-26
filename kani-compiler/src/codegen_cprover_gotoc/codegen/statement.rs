@@ -355,7 +355,9 @@ impl<'tcx> GotocCtx<'tcx> {
                         // Non-virtual, direct drop call
                         assert!(!matches!(drop_instance.def, InstanceDef::Virtual(_, _)));
 
-                        let func = self.codegen_func_expr(drop_instance, None);
+                        Stmt::skip(Location::none())
+
+                        /* let func = self.codegen_func_expr(drop_instance, None);
                         let place = unwrap_or_return_codegen_unimplemented_stmt!(
                             self,
                             self.codegen_place(place)
@@ -385,6 +387,7 @@ impl<'tcx> GotocCtx<'tcx> {
                                 "https://github.com/model-checking/kani/issues/426",
                             )
                         }
+                        .as_stmt(Location::none()) */
                     }
                 }
             }

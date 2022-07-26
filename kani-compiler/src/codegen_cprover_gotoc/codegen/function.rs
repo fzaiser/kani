@@ -29,6 +29,10 @@ impl<'tcx> GotocCtx<'tcx> {
             "fmt::ArgumentV1::<'a>::as_usize" => true,
             // https://github.com/model-checking/kani/issues/282
             "bridge::closure::Closure::<'a, A, R>::call" => true,
+            name if name.contains("metadata") => true,
+            name if name.contains("std::sync::atomic::AtomicPtr") => true,
+            name if name.contains("runtime::task::harness::Harness") => true,
+            name if name.contains("runtime::task::core::Cell") => true,
             name if name.contains("reusable_box::ReusableBoxFuture") => true,
             "tokio::sync::Semaphore::acquire_owned::{closure#0}" => true,
             _ => false,
