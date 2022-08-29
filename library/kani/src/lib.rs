@@ -140,3 +140,7 @@ pub const fn panic(message: &'static str) -> ! {
 
 /// Kani proc macros must be in a separate crate
 pub use kani_macros::*;
+
+pub fn use_any() {
+    crate::any::<usize>();
+}
