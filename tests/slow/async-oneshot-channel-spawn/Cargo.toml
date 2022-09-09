@@ -1,0 +1,8 @@
+[package]
+name = "async-oneshot-channel-spawn"
+version = "0.1.0"
+edition = "2021"
+panic = "abort"
+
+[dependencies]
+async-oneshot = "0.5.0"
